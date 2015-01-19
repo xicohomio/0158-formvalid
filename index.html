@@ -11,15 +11,24 @@
 		<input id="nome" type="text" name="nome" value="">
 	<span class="nome-erro">o nome deve ter mais de tres letras</span>
 </form>
-		<script src="jquery.js.js"></script>
-		<script> 
-				$("form").submit(function(event) {
-				nometamanho=$("input").val().length();
-				console.writeln(nometamanho);
 
-				if (nometamanho) {
+		<script src="jquery.js"></script>
+
+		<script> 
+
+				console.log('passou aqui');
+				
+
+				$("form").submit(function(event) {
+				console.log('oooooo');
+
+
+				nometamanho=$("input").val().length;
+				console.log(nometamanho);
+
+				if (nometamanho<5) {
 					$(".nome-erro").show();
-						return;
+						return false;
 					}
 					//$(".nome-erro").text("not valid!").show().fadeOut(1000);
 				event.preventDefault();
