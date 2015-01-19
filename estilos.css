@@ -3,3 +3,6 @@ input{
 	font-size: 3em;
 }
 
+.nome-erro{
+	display: none;
+}

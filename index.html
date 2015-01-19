@@ -6,9 +6,25 @@
 	</head>
 
 	<body>
-		<form action="index.html" method="post" accept-charset="utf-8"></form>
+		<form action="index.html" method="post" accept-charset="utf-8">
 		<label for="nome">nome</label>
 		<input id="nome" type="text" name="nome" value="">
 	<span class="nome-erro">o nome deve ter mais de tres letras</span>
-	</body id="index">
+</form>
+		<script src="jquery.js"></script>
+		<script> 
+				$("form").submit(function(event) {
+				nometamanho=$("input").val().length();
+				console.writeln(nometamanho);
+
+				if (nometamanho) {
+					$(".nome-erro").show();
+						return;
+					}
+					//$(".nome-erro").text("not valid!").show().fadeOut(1000);
+				event.preventDefault();
+				});
+		</script>
+
+	</body>
 </html>
