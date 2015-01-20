@@ -9,7 +9,7 @@
 		<form action="index.html" method="post" accept-charset="utf-8">
 		<label for="nome">nome</label>
 		<input id="nome" type="text" name="nome" value="">
-	<span class="nome-erro">o nome deve ter mais de tres letras</span>
+	<span class="nome-erro">o nome deve ter mais de cinco letras</span>
 </form>
 
 		<script src="jquery.js"></script>
@@ -30,6 +30,7 @@
 					$(".nome-erro").show();
 						return false;
 					}
+					$(".nome-erro").hide();
 					//$(".nome-erro").text("not valid!").show().fadeOut(1000);
 				event.preventDefault();
 				});
