@@ -13,10 +13,17 @@
 	<span class="nome-erro">o nome deve ter mais de cinco letras</span>
 
 	<label for="password">password</label>
-	<input id="password" type="password" name="password" value=""><br>
+	<input id="password" type="password" name="password" value=""required><br>
 
 	<label for="password_confirm">password_confirm</label>
-	<input id="password_confirm" type="password_confirm" name="password_confirm" value="">
+	<input id="password" type="password" name="password" value=""required><br>
+	<input id="password_confirm" type="password" name="password_confirm" value=""required>
+	<span class="password-erro">as passwords devem ser iguais</span>
+	
+	<label for="omeuemail">E-mail</label>
+	<input id="omeuemail" type="email" name="omeuemail" value=""required><br>
+
+	<input type="submit">
 </form>
 
 		<script src="jquery.js"></script>
@@ -38,6 +45,12 @@
 						return false;
 					}
 					$(".nome-erro").hide();
+
+						if ($("#password").val() != $("#password_confirm").val()){
+							$(".password-erro").show();
+							return false
+						}
+
 					//$(".nome-erro").text("not valid!").show().fadeOut(1000);
 				event.preventDefault();
 				});
