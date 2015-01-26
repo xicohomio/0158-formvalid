@@ -20,7 +20,7 @@
 	<input id="password" type="password" name="password" value=""required><br>
 <br>
 	<label for="password_confirm">password_confirm</label>
-	<input id="password" type="password" name="password" value=""required><br>
+	
 	<input id="password_confirm" type="password" name="password_confirm" value=""required>
 	<br>
 	<span class="password-erro">as passwords devem ser iguais</span>
@@ -42,11 +42,11 @@
 
 				password: {
 					required: true,
-					minlenght: 5,	
+					minlength: 5,	
 				},
 				password_confirm: {
 					required: true,
-					minlenght: 5,
+					minlength: 5,
 					equalTo: "#password"	
 				}
 			},	
@@ -57,8 +57,9 @@
 			password :{
 				required: "password obrigatorio",
 			},
-			password_confirm: {"repeat your password",
-			minlenght: jquery.validator.format("insira pelo menos {0} characters"),
+			password_confirm: {
+				required: "repeat your password",
+			minlength: jQuery.validator.format("insira pelo menos {0} characters"),
 			equalTo: "devem ser iguais"
 		}
 
