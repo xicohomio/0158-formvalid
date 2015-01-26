@@ -48,6 +48,10 @@
 					required: true,
 					minlength: 5,
 					equalTo: "#password"	
+				},
+				email: {
+					required: true,
+					email: true
 				}
 			},	
 		
@@ -61,7 +65,11 @@
 				required: "repeat your password",
 			minlength: jQuery.validator.format("insira pelo menos {0} characters"),
 			equalTo: "devem ser iguais"
-		}
+		},
+			email: {
+				required:"please enter a valid email adress",
+				minlength: "please enter a valid email adress",
+			},
 
 		}		
 		}
