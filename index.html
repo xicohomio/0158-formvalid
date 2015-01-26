@@ -1,25 +1,30 @@
 <html>
 	<head>
-		<meta charset=utf-8/>
+		<meta charset='utf-8'/>
 		<title></title>
 		<link rel="stylesheet" href="estilos.css">
 	</head>
 
-	<body>
-		<form action="index.html" method="post" accept-charset="utf-8">
+	<body id="index">
+				
+	</body>>
+		<form id="vform" action="index.html" method="post" accept-charset="utf-8">
+		<br>
 		<label for="nome">nome</label>
+		<br>
 		<input id="nome" type="text" name="nome" value="">
-		
+	<br>	
 	<span class="nome-erro">o nome deve ter mais de cinco letras</span>
-
+<br>
 	<label for="password">password</label>
 	<input id="password" type="password" name="password" value=""required><br>
-
+<br>
 	<label for="password_confirm">password_confirm</label>
-	<input id="password" type="password" name="password" value=""required><br>
-	<input id="password_confirm" type="password" name="password_confirm" value=""required>
-	<span class="password-erro">as passwords devem ser iguais</span>
 	
+	<input id="password_confirm" type="password" name="password_confirm" value=""required>
+	<br>
+	<span class="password-erro">as passwords devem ser iguais</span>
+	<br>
 	<label for="omeuemail">E-mail</label>
 	<input id="omeuemail" type="email" name="omeuemail" value=""required><br>
 
@@ -27,33 +32,22 @@
 </form>
 
 		<script src="jquery.js"></script>
+		<script src="jquery-validation/dist/jquery.validate.js"></script>
 
-		<script> 
+		<script>
+		$("#vform").validate(
+		{
+			rules: {
+				nome: "required",
+			},	
+		
 
-				console.log('passou aqui');
-				
+		messages:{
+			nome:'o nome é obrigatorio',
+		}		
+		}
 
-				$("form").submit(function(event) {
-				console.log('oooooo');
-
-
-				nometamanho=$("input").val().length;
-				console.log(nometamanho);
-
-				if (nometamanho<5) {
-					$(".nome-erro").show();
-						return false;
-					}
-					$(".nome-erro").hide();
-
-						if ($("#password").val() != $("#password_confirm").val()){
-							$(".password-erro").show();
-							return false
-						}
-
-					//$(".nome-erro").text("not valid!").show().fadeOut(1000);
-				event.preventDefault();
-				});
+			);
 		</script>
 
 	</body>
